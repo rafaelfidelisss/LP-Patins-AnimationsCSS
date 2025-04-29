@@ -115,9 +115,6 @@ section.gallery {
 @media (width <= 31.25em) {
   section.gallery {
     width: 100%;
-    max-width: 80rem;
-    padding: 1.5rem;
-    margin-inline: auto;
 
     & h2 {
       font-size: 1.5rem;
@@ -132,6 +129,10 @@ section.gallery {
       "D";
 
       gap: 1.5rem;
+
+      & figure > img {
+        max-height: 16rem;
+      }
     }
   }
 }
