@@ -14,7 +14,7 @@ section.hero {
   }
 
   /* words slider */
-  & h1 div {
+  & .words-container {
     display: inline-block;
     overflow: hidden;
     height: 5rem;
@@ -135,12 +135,13 @@ section.hero {
   50% {
     transform: translateX(-20px);
   }
-  
+
   100% {
     transform: translateX(0);
   }
 }
 
+/* stars opacity */
 @keyframes appear {
   to {
     opacity: 1;
@@ -209,5 +210,105 @@ section.hero {
   /* radical static */
   100% {
     transform: translateY(-15rem);
+  }
+}
+
+
+@media (width <= 31.25em) {
+  section.hero {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  
+    & > div:nth-child(2) {
+      display: block;
+      max-width: 19.5rem;
+      width: 100%;
+      height: 19.5rem;
+
+      & img[src*="stars-1"] {
+        max-width: 3.5rem;
+      }
+      & img[src*="stars-2"] {
+        max-width: 1.6rem;
+      }
+    }
+
+    & h1 {
+      font-size: 2rem;
+    }
+    
+    & .words-container {
+      height: 2.5rem;
+    }
+
+    & .buttons {
+      flex-direction: column-reverse;
+      width: 19.5rem;
+      margin-inline: auto; 
+    }
+  }
+  
+  @keyframes slideUp {
+    /* radical static */
+    0%, 22% {
+      transform: translateY(0);
+    }
+  
+    /* divertida in */
+    23% {
+      transform: translateY(calc(-2.5rem - 8px));
+    }
+    25% {
+      transform: translateY(calc(-2.5rem + 5px));
+    }
+    27% {
+      transform: translateY(calc(-2.5rem - 3px));
+    }
+    29% {
+      transform: translateY(calc(-2.5rem + 3px));
+    }
+  
+    /* divertida static */
+    33%, 55% {
+      transform: translateY(-2.5rem);
+    }
+  
+    /* saudável in */
+    56% {
+      transform: translateY(calc(-5rem - 8px));
+    }
+    58% {
+      transform: translateY(calc(-5rem + 5px));
+    }
+    60% {
+      transform: translateY(calc(-5rem - 3px));
+    }
+    62% {
+      transform: translateY(calc(-5rem + 3px));
+    }
+  
+    /* saudável static */
+    66%, 88% {
+      transform: translateY(-5rem);
+    }
+  
+    /* radical in */
+    89% {
+      transform: translateY(calc(-7.5rem - 8px));          
+    }
+    91% {
+      transform: translateY(calc(-7.5rem + 5px));
+    }
+    93% {
+      transform: translateY(calc(-7.5rem - 3px));
+    }
+    95% {
+      transform: translateY(calc(-7.5rem + 3px));
+    }
+  
+    /* radical static */
+    100% {
+      transform: translateY(-7.5rem);
+    }
   }
 }
